@@ -18,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>歸檔：2020 - Interesting</title>
+    <title>Archive: 2020 - Interesting</title>
   
   
 
@@ -439,6 +439,119 @@
         
           
   <h2 class="title">
+    <a href="/2020/06/18/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/">
+      时间和日期
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="https://ziv-bigpen.github.io" target="_blank" rel="nofollow noopener">
+    <img src="https://cdn.nlark.com/yuque/0/2020/png/1388870/1592398558073-avatar/843d4cc7-14c6-4f0b-af28-8a37bcdae761.png?x-oss-process=image%2Fresize%2Cm_fill%2Cw_64%2Ch_64%2Fformat%2Cpng">
+    <p>ZIV</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Jun 18, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="时间和日期"><a href="#时间和日期" class="headerlink" title="时间和日期"></a>时间和日期</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在Java8版本提供了新的时间和日期的API，主要是为了替换旧的API（Date、calendar，当初设计时考虑不完善）。新增加的主要内容如下：</p>
+<ul>
+<li><p>本地日期和时间：<code>LocalDateTime</code>，<code>LocalDate</code>，<code>LocalTime</code>；</p>
+</li>
+<li><p>带时区的日期和时间：<code>ZonedDateTime</code>；</p>
+</li>
+<li><p>时刻：<code>Instant</code>；</p>
+</li>
+<li><p>时区：<code>ZoneId</code>，<code>ZoneOffset</code>；</p>
+</li>
+<li><p>时间间隔：<code>Duration</code>。</p>
+</li>
+<li><p>格式转换：<code>DateTimeFormatter</code></p>
+<h2 id="新API"><a href="#新API" class="headerlink" title="新API"></a>新API</h2><h3 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">LocalDate d = LocalDate.now(); <span class="comment">// 当前日期</span></span><br><span class="line">LocalTime t = LocalTime.now(); <span class="comment">// 当前时间</span></span><br><span class="line">LocalDateTime dt = LocalDateTime.now(); <span class="comment">// 当前日期和时间</span></span><br><span class="line">System.out.println(d); <span class="comment">// 严格按照ISO 8601格式打印</span></span><br><span class="line">System.out.println(t); <span class="comment">// 严格按照ISO 8601格式打印</span></span><br><span class="line">System.out.println(dt); <span class="comment">// 严格按照ISO 8601格式打印</span></span><br><span class="line"><span class="comment">//时期变换</span></span><br><span class="line"><span class="comment">//加减日期，自动计算</span></span><br><span class="line">LocatDateTime dt0 = dt.plusDays(<span class="number">1</span>).minusHours(<span class="number">1</span>);<span class="comment">//加一天，减一小时</span></span><br><span class="line">LocatDateTime dt0 = dt.withYear()</span><br></pre></td></tr></table></figure>
+<h3 id="DateTimeFormatter"><a href="#DateTimeFormatter" class="headerlink" title="DateTimeFormatter"></a>DateTimeFormatter</h3><p>日期的常用格式有</p>
+</li>
+<li><p>日期：yyyy-MM-dd</p>
+</li>
+<li><p>时间：HH:mm:ss</p>
+</li>
+<li><p>带毫秒的时间：HH:mm:ss.SSS</p>
+</li>
+<li><p>日期和时间：yyyy-MM-dd’T’HH:mm:ss</p>
+</li>
+<li><p>带毫秒的日期和时间：yyyy-MM-dd’T’HH:mm:ss.SSS</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义格式</span></span><br><span class="line">DateTimeFormatter dtf = DateTimeFormatter.ofPattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">String now = dtf.format(LocalDateTime.now());</span><br><span class="line"><span class="comment">//自定义格式解析</span></span><br><span class="line">LocalDateTime dt2 = LocalDateTime.parse(<span class="string">"2019/11/30 15:16:17"</span>,dtf);</span><br><span class="line">Sysout.out.println(dt2);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
     <a href="/2020/06/17/Windows%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/">
       Windows常用软件
     </a>
@@ -509,10 +622,11 @@
 </ul>
 </li>
 <li>oneTable<ul>
-<li>整理所有打开的标签页，然后可以一键恢复，用于节约内存<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><h3 id="OneNote"><a href="#OneNote" class="headerlink" title="OneNote"></a>OneNote</h3>Win10自带的笔记软件，可在微软应用商店里下载。笔记分为三层结构——笔记本、分区、分页，写作起来比较舒适，功能比较完善，配合Microsfot 365使用起来比较快乐。<br>优点：微软出品，不用担心倒闭<br>缺点：同步效果比较差</li>
+<li>整理所有打开的标签页，然后可以一键恢复，用于节约内存</li>
 </ul>
 </li>
 </ul>
+<h2 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h2><h3 id="OneNote"><a href="#OneNote" class="headerlink" title="OneNote"></a>OneNote</h3><p>Win10自带的笔记软件，可在微软应用商店里下载。笔记分为三层结构——笔记本、分区、分页，写作起来比较舒适，功能比较完善，配合Microsfot 365使用起来比较快乐。<br>优点：微软出品，不用担心倒闭<br>缺点：同步效果比较差</p>
 <h3 id="语雀"><a href="#语雀" class="headerlink" title="语雀"></a><a href="https://www.yuque.com/" target="_blank" rel="noopener">语雀</a></h3><p>综合看来是最好的博客网站，功能齐全，界面友好。</p>
 <h3 id="XMind"><a href="#XMind" class="headerlink" title="XMind"></a><a href="https://www.xmind.cn/" target="_blank" rel="noopener">XMind</a></h3><p>最优雅的思维导图软件，免费的功能已经足够用，一般用于整理思维，然后基于思维导图写作。</p>
 <h3 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a><a href="https://education.wps.cn/" target="_blank" rel="noopener">WPS</a></h3><p>国产Office软件，可以打开几乎所有类型的文档，个人觉得非常好用。但在在写论文或其它重要文件时请使用Microsoft Office，WPS大部分是作为文件查看器，小文件修改的工具。建议使用WPS Office 校园版，使用起来比较合适。</p>
@@ -527,104 +641,6 @@
 <h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><h3 id="Snipaste"><a href="#Snipaste" class="headerlink" title="Snipaste"></a>Snipaste</h3><p>微软应用商店下载，功能强大</p>
 <h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><h3 id="Bandizip"><a href="#Bandizip" class="headerlink" title="Bandizip"></a><a href="https://www.bandisoft.com/bandizip/" target="_blank" rel="noopener">Bandizip</a></h3><p>免费版有广告但平时使用时看不到，功能强大。</p>
 <h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h3 id="火绒"><a href="#火绒" class="headerlink" title="火绒"></a><a href="https://www.huorong.cn/" target="_blank" rel="noopener">火绒</a></h3><p>主要用于干掉windows defender</p>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/06/17/hello-world/">
-      Hello World
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="https://ziv-bigpen.github.io" target="_blank" rel="nofollow noopener">
-    <img src="https://cdn.nlark.com/yuque/0/2020/png/1388870/1592398558073-avatar/843d4cc7-14c6-4f0b-af28-8a37bcdae761.png?x-oss-process=image%2Fresize%2Cm_fill%2Cw_64%2Ch_64%2Fformat%2Cpng">
-    <p>ZIV</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 17, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.printl(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
     </div>
@@ -873,16 +889,16 @@
       
     
       
-        <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     
       
-        本站使用
+        Use
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        作為主題，總訪問量為
+        as theme, total visits
           <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          次
+          times
         
       
     

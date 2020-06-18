@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>Hello World - Interesting</title>
+    <title>时间和日期 - Interesting</title>
   
   
 
@@ -343,8 +343,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/06/17/hello-world/">
-      Hello World
+    <a href="/2020/06/18/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/">
+      时间和日期
     </a>
   </h1>
 
@@ -374,7 +374,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jun 17, 2020</p>
+    <p>发布于：Jun 18, 2020</p>
   </a>
 </div>
 
@@ -397,19 +397,34 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.printl(<span class="string">"hello world"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <h1 id="时间和日期"><a href="#时间和日期" class="headerlink" title="时间和日期"></a>时间和日期</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在Java8版本提供了新的时间和日期的API，主要是为了替换旧的API（Date、calendar，当初设计时考虑不完善）。新增加的主要内容如下：</p>
+<ul>
+<li><p>本地日期和时间：<code>LocalDateTime</code>，<code>LocalDate</code>，<code>LocalTime</code>；</p>
+</li>
+<li><p>带时区的日期和时间：<code>ZonedDateTime</code>；</p>
+</li>
+<li><p>时刻：<code>Instant</code>；</p>
+</li>
+<li><p>时区：<code>ZoneId</code>，<code>ZoneOffset</code>；</p>
+</li>
+<li><p>时间间隔：<code>Duration</code>。</p>
+</li>
+<li><p>格式转换：<code>DateTimeFormatter</code></p>
+<h2 id="新API"><a href="#新API" class="headerlink" title="新API"></a>新API</h2><h3 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法</span></span><br><span class="line">LocalDate d = LocalDate.now(); <span class="comment">// 当前日期</span></span><br><span class="line">LocalTime t = LocalTime.now(); <span class="comment">// 当前时间</span></span><br><span class="line">LocalDateTime dt = LocalDateTime.now(); <span class="comment">// 当前日期和时间</span></span><br><span class="line">System.out.println(d); <span class="comment">// 严格按照ISO 8601格式打印</span></span><br><span class="line">System.out.println(t); <span class="comment">// 严格按照ISO 8601格式打印</span></span><br><span class="line">System.out.println(dt); <span class="comment">// 严格按照ISO 8601格式打印</span></span><br><span class="line"><span class="comment">//时期变换</span></span><br><span class="line"><span class="comment">//加减日期，自动计算</span></span><br><span class="line">LocatDateTime dt0 = dt.plusDays(<span class="number">1</span>).minusHours(<span class="number">1</span>);<span class="comment">//加一天，减一小时</span></span><br><span class="line">LocatDateTime dt0 = dt.withYear()</span><br></pre></td></tr></table></figure>
+<h3 id="DateTimeFormatter"><a href="#DateTimeFormatter" class="headerlink" title="DateTimeFormatter"></a>DateTimeFormatter</h3><p>日期的常用格式有</p>
+</li>
+<li><p>日期：yyyy-MM-dd</p>
+</li>
+<li><p>时间：HH:mm:ss</p>
+</li>
+<li><p>带毫秒的时间：HH:mm:ss.SSS</p>
+</li>
+<li><p>日期和时间：yyyy-MM-dd’T’HH:mm:ss</p>
+</li>
+<li><p>带毫秒的日期和时间：yyyy-MM-dd’T’HH:mm:ss.SSS</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义格式</span></span><br><span class="line">DateTimeFormatter dtf = DateTimeFormatter.ofPattern(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">String now = dtf.format(LocalDateTime.now());</span><br><span class="line"><span class="comment">//自定义格式解析</span></span><br><span class="line">LocalDateTime dt2 = LocalDateTime.parse(<span class="string">"2019/11/30 15:16:17"</span>,dtf);</span><br><span class="line">Sysout.out.println(dt2);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
           
             <div class='article_footer'>
@@ -446,7 +461,7 @@
           
         
           
-            <p>本文永久链接是：<a href=http://yoursite.com/2020/06/17/hello-world/>http://yoursite.com/2020/06/17/hello-world/</a></p>
+            <p>本文永久链接是：<a href=http://yoursite.com/2020/06/18/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/>http://yoursite.com/2020/06/18/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/</a></p>
           
         
       </blockquote>
@@ -497,10 +512,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-23T23:01:43+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-18T11:30:03+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Mar 23, 2020</p>
+    <p>更新于：Jun 18, 2020</p>
   </a>
 </div>
 
@@ -524,7 +539,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/17/hello-world/&title=Hello World - Interesting&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/06/18/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/&title=时间和日期 - Interesting&summary="
           
           >
           
@@ -546,16 +561,10 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/06/17/Windows%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Windows常用软件</p>
+            
+              <a class='next' href='/2020/06/17/Windows%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/'>
+                <p class='title'>Windows常用软件<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>Windows常用软件浏览器Microsoft Edge微软出品的最新的基于Chromium内核（谷歌）的浏览器，兼容谷歌的所有插件，最重要的是可以登陆微软账号同步设置，且有和chrome一样的...</p>
-              </a>
-            
-            
-              <a class='next' href='/2020/03/23/hello-myblog-by-hexo/'>
-                <p class='title'>hello myblog by hexo<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>主题首先作为一个计算机专业的学生，写一个博客是很正常的事情。
-</p>
               </a>
             
           </div>
@@ -600,7 +609,7 @@
 
   <script>
     window.subData = {
-      title: 'Hello World',
+      title: '时间和日期',
       tools: true
     }
   </script>
@@ -626,7 +635,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新API"><span class="toc-text">新API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LocalDateTime"><span class="toc-text">LocalDateTime</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DateTimeFormatter"><span class="toc-text">DateTimeFormatter</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -697,16 +706,16 @@
       
     
       
-        <div><p>博客內容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" target="_blank" rel="noopener">姓名標示-非商業性-相同方式分享 4.0 國際 (CC BY-NC-SA 4.0) 協議</a></p>
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
       
     
       
-        本站使用
+        Use
         <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
-        作為主題，總訪問量為
+        as theme, total visits
           <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
-          次
+          times
         
       
     
