@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="时间和日期, ziv">
+    <meta name="keywords" content="集合, ziv">
     <meta name="description" content="personal">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>时间和日期 | Interesting</title>
+    <title>集合 | Interesting</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">时间和日期</h1>
+                    <h1 class="description center-align post-title">集合</h1>
                 </div>
             </div>
         </div>
@@ -428,9 +428,17 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%9B%86%E5%90%88/">
+                                <span class="chip bg-color">集合</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -442,21 +450,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-18
+                    2020-05-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-08
+                    2020-07-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    296
+                    446
                 </div>
                 
 
@@ -478,48 +486,158 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="时间和日期"><a href="#时间和日期" class="headerlink" title="时间和日期"></a>时间和日期</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在Java8版本提供了新的时间和日期的API，主要是为了替换旧的API（Date、calendar，当初设计时考虑不完善）。新增加的主要内容如下：</p>
+                <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Java中的集合是对常用的数据结构进行封装和实现，在第一阶段要了解集合类型是如何使用，第二阶段要知道底层代码是如何实现，第三阶段要尝试自己实现集合类型。</p>
+<h2 id="快速预览"><a href="#快速预览" class="headerlink" title="快速预览"></a>快速预览</h2><table>
+<thead>
+<tr>
+<th align="center"><strong>名称</strong></th>
+<th align="center"><strong>特性</strong></th>
+<th align="center"><strong>应用场景</strong></th>
+<th align="center"><strong>实现的接口</strong></th>
+<th align="center"><strong>重要方法</strong></th>
+<th align="center"><strong>内部实现</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ArrayList</td>
+<td align="center">线性存储</td>
+<td align="center">需要有序、查询</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">数组</td>
+</tr>
+<tr>
+<td align="center">LinkedList</td>
+<td align="center">链式存储</td>
+<td align="center">插入、删除效率高</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">链表</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">HashSet</td>
+<td align="center">将对象的Hash值作为问题对象的“索引(index)”</td>
+<td align="center">需要很快的查找和增删操作</td>
+<td align="center">Set</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Cloneable</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">Serializable</td>
+<td align="center">add</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">remove</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">contains</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">size</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">iterator</td>
+<td align="center">由一个HashMap实现</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><ul>
+<li>add</li>
+<li>contains</li>
+<li>remove</li>
+<li>size</li>
+<li>iterator<ul>
+<li>hasNext</li>
+<li>next</li>
+<li>remove</li>
+</ul>
+</li>
+</ul>
+<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>LinkedList</p>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>具有确定性、互异性、无序性。</p>
+<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p>基于散列函数，可以存放Null</p>
 <ul>
-<li><p>本地日期和时间：<code>LocalDateTime</code>，<code>LocalDate</code>，<code>LocalTime</code>；</p>
-</li>
-<li><p>带时区的日期和时间：<code>ZonedDateTime</code>；</p>
-</li>
-<li><p>时刻：<code>Instant</code>；</p>
-</li>
-<li><p>时区：<code>ZoneId</code>，<code>ZoneOffset</code>；</p>
-</li>
-<li><p>时间间隔：<code>Duration</code>。</p>
-</li>
-<li><p>格式转换：<code>DateTimeFormatter</code></p>
-<h3 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//构造方法</span>
-LocalDate d <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 当前日期</span>
-LocalTime t <span class="token operator">=</span> LocalTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 当前时间</span>
-LocalDateTime dt <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 当前日期和时间</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 严格按照ISO 8601格式打印</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 严格按照ISO 8601格式打印</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>dt<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 严格按照ISO 8601格式打印</span>
-<span class="token comment" spellcheck="true">//时期变换</span>
-<span class="token comment" spellcheck="true">//加减日期，自动计算</span>
-LocatDateTime dt0 <span class="token operator">=</span> dt<span class="token punctuation">.</span><span class="token function">plusDays</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">minusHours</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//加一天，减一小时</span>
-LocatDateTime dt0 <span class="token operator">=</span> dt<span class="token punctuation">.</span><span class="token function">withYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-<h3 id="DateTimeFormatter"><a href="#DateTimeFormatter" class="headerlink" title="DateTimeFormatter"></a>DateTimeFormatter</h3><p>日期的常用格式有</p>
-</li>
-<li><p>日期：yyyy-MM-dd</p>
-</li>
-<li><p>时间：HH:mm:ss</p>
-</li>
-<li><p>带毫秒的时间：HH:mm:ss.SSS</p>
-</li>
-<li><p>日期和时间：yyyy-MM-dd’T’HH:mm:ss</p>
-</li>
-<li><p>带毫秒的日期和时间：yyyy-MM-dd’T’HH:mm:ss.SSS</p>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//自定义格式</span>
-DateTimeFormatter dtf <span class="token operator">=</span> DateTimeFormatter<span class="token punctuation">.</span><span class="token function">ofPattern</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-String now <span class="token operator">=</span> dtf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>LocalDateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//自定义格式解析</span>
-LocalDateTime dt2 <span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token string">"2019/11/30 15:16:17"</span><span class="token punctuation">,</span>dtf<span class="token punctuation">)</span><span class="token punctuation">;</span>
-Sysout<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>dt2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</li>
+<li>add</li>
+<li>clear</li>
+<li>contains</li>
+<li>remove</li>
+<li>retainAll 计算两个集合交集</li>
+</ul>
+<p>在进行存放数据时一般要重写</p>
+<ul>
+<li>hashcode()</li>
+<li>equals()</li>
+<li>toString()</li>
+</ul>
+<p>这三个方法，先判断hashcode值，然后判断equals。<br>TreeSet<br>基于树结构，可排序，因为要进行排序，所以不容纳null元素。<br>在比较元素时比较的是CompareTo方法，要实现Comparable接口。</p>
+<h3 id="linkedHashSet"><a href="#linkedHashSet" class="headerlink" title="linkedHashSet"></a>linkedHashSet</h3><p>基于散列函数与双向链表<br>存入的元素与输出的顺序一致，是有序的结构。</p>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>HashMap</p>
+<p>TreeMap<br>基于红黑树进行排序<br>HashTable</p>
+<ul>
+<li>put</li>
+<li>contains</li>
+<li>containsValue</li>
+<li>containsKey</li>
+<li>get</li>
+<li>remove</li>
+<li>clear</li>
+</ul>
+<p>LinkedHashMap</p>
+<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h3 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h3><p>用于基本类型</p>
+<h3 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h3><p>用于子类对象</p>
+<h3 id="比较（Comparable、Comparator）"><a href="#比较（Comparable、Comparator）" class="headerlink" title="比较（Comparable、Comparator）"></a>比较（Comparable、Comparator）</h3><p>Comparable接口，一般用在类内部，当有代码的时候可以用。</p>
+<ul>
+<li>compareTo方法。左边-右边</li>
+</ul>
+<p>Comparator接口，一般不知道源代码，只在外边使用。</p>
+<ul>
+<li>compare方法，设计一个类实现此接口，把类的实例传给要排序的对象。可以把这个比较器给其它工具类</li>
 </ul>
 
             </div>
@@ -546,7 +664,7 @@ Sysout<span class="token punctuation">.</span>out<span class="token punctuation"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ziv-bigpen.github.io/2020/06/18/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/">https://ziv-bigpen.github.io/2020/06/18/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/</a>
+                    <a href="https://ziv-bigpen.github.io/2020/05/16/%E9%9B%86%E5%90%88/">https://ziv-bigpen.github.io/2020/05/16/%E9%9B%86%E5%90%88/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,7 +701,15 @@ Sysout<span class="token punctuation">.</span>out<span class="token punctuation"
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%9B%86%E5%90%88/">
+                                    <span class="chip bg-color">集合</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -753,37 +879,26 @@ Sysout<span class="token punctuation">.</span>out<span class="token punctuation"
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/08/%E9%9B%86%E5%90%88/">
+                <a href="/2020/05/16/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="集合">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="时间和日期">
                         
-                        <span class="card-title">集合</span>
+                        <span class="card-title">时间和日期</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            集合简介Java中的集合是对常用的数据结构进行封装和实现，在第一阶段要了解集合类型是如何使用，第二阶段要知道底层代码是如何实现，第三阶段要尝试自己实现集合类型。
-快速预览
+                            时间和日期简介在Java8版本提供了新的时间和日期的API，主要是为了替换旧的API（Date、calendar，当初设计时考虑不完善）。新增加的主要内容如下：
 
-
-名称
-特性
-应用场景
-实现的接口
-重要方法
-内部实现
-
-
-
-Ar
+本地日期和时间：LocalDateTime，LocalDate，LocalT
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-16
                         </span>
                         <span class="publish-author">
                             
@@ -792,6 +907,18 @@ Ar
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%97%B6%E9%97%B4/">
+                        <span class="chip bg-color">时间</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -803,27 +930,25 @@ Ar
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/17/Windows%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/">
+                <a href="/2020/03/23/hello-myblog-by-hexo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Windows常用软件">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="hello myblog by hexo">
                         
-                        <span class="card-title">Windows常用软件</span>
+                        <span class="card-title">hello myblog by hexo</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Windows常用软件浏览器Microsoft Edge微软出品的最新的基于Chromium内核（谷歌）的浏览器，兼容谷歌的所有插件，最重要的是可以登陆微软账号同步设置，且有和chrome一样的体验。
-插件
-Infinty Pro
-管理常用
+                            主题首先作为一个计算机专业的学生，写一个博客是很正常的事情。
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-23
                             </span>
                         <span class="publish-author">
                             
