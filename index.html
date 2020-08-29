@@ -117,9 +117,39 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
 
   </li>
   </ul>
@@ -149,10 +179,164 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ziv-bigpen.github.io/2020/08/29/GIT/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/huaji.jpg">
+      <meta itemprop="name" content="ziv">
+      <meta itemprop="description" content="personal">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Interesting">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/08/29/GIT/" class="post-title-link" itemprop="url">Git</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-29 15:09:00 / 修改时间：15:09:55" itemprop="dateCreated datePublished" datetime="2020-08-29T15:09:00+08:00">2020-08-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="GIT"><a href="#GIT" class="headerlink" title="GIT"></a>GIT</h1><p>Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<h2 id="重要内容"><a href="#重要内容" class="headerlink" title="重要内容"></a>重要内容</h2><p>官方网站：<a href="https://git-scm.com/" target="_blank" rel="noopener">官网</a><br>资源：<a href="https://github-production-release-asset-2e65be.s3.amazonaws.com/15400220/0bb77b80-d660-11ea-8c73-1401c798301b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200805%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200805T124238Z&X-Amz-Expires=300&X-Amz-Signature=0b3149ee370b467a4609907313f3b81958400490caee5ca6f6cb61591a490fbe&X-Amz-SignedHeaders=host&actor_id=36567955&repo_id=15400220&response-content-disposition=attachment%3B%20filename%3Dprogit.pdf&response-content-type=application%2Foctet-stream" target="_blank" rel="noopener">Pro Git</a>，官网有中文版的PDF文件，讲述地非常详细，值得一看。</p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="初始配置"><a href="#初始配置" class="headerlink" title="初始配置"></a>初始配置</h3><pre class=" language-git"><code class="language-git"><span class="token comment" spellcheck="true">#打开命令框：右键->git Bash Here</span>
+<span class="token comment" spellcheck="true">#配置用户名与邮箱</span>
+git config --global user.name <span class="token string">"username"</span>  #用户名
+git config --global user.email <span class="token string">"emali@example.com"</span> #邮箱
+
+<span class="token comment" spellcheck="true">#查看配置信息</span>
+git config -l
+
+<span class="token comment" spellcheck="true">#查看git版本</span>
+git version</code></pre>
+<h3 id="三种状态"><a href="#三种状态" class="headerlink" title="三种状态"></a>三种状态</h3><ol>
+<li><strong>已修改(modeified)：</strong>修改了文件，还没有保存到数据库中。</li>
+<li><strong>已暂存(staged)：</strong>对一个已修改的文件的当前版本做的标记，供以提交。</li>
+<li><strong>已提交(committed)：</strong>数据已经安全地保存在本地数据库中上。</li>
+</ol>
+<p>由于这三个状态，Git项目对应拥有三个阶段：</p>
+<ol>
+<li><strong>工作区：</strong>对项目的某个版本独立提取出的内容，与项目文件夹对应。</li>
+<li><strong>暂存区：</strong>是一个文件，保存了下次将要提交的文件列表信息，一般在Git仓库目录中。</li>
+<li><strong>Git仓库：</strong>保存项目的元数据和对象数据库的地方。</li>
+</ol>
+<p><strong>简单的工作流程</strong>：</p>
+<ol>
+<li>在工作区修改文件。</li>
+<li>将想要提交的数据放入暂存区。</li>
+<li>提交更新，把暂存区的所有文件永久性存储到Git目录中。<h3 id="Git基础"><a href="#Git基础" class="headerlink" title="Git基础"></a>Git基础</h3><pre class=" language-git"><code class="language-git"><span class="token comment" spellcheck="true">#初始化</span>
+git init
+<span class="token comment" spellcheck="true">#追踪文件,写文件名</span>
+git add .
+git add README
+<span class="token comment" spellcheck="true"># 从暂存区移除文件</span>
+git rm --cached filename
+<span class="token comment" spellcheck="true"># 提交,-m 必须要写</span>
+git commit -m <span class="token string">'initial project version'</span>
+<span class="token comment" spellcheck="true"># 克隆仓库，从云端</span>
+git clone &lt;url> 
+<span class="token comment" spellcheck="true"># 检查当前文件状态</span>
+git status
+<span class="token comment" spellcheck="true"># 查看日志</span>
+git log
+<span class="token comment" spellcheck="true"># 将文件返回至与元数据一致</span>
+git checkout -- &lt;file></code></pre>
+<h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h3>忽略一些不需要进行Git管理的文件，如日志文件、临时文件等。<pre class=" language-git"><code class="language-git"><span class="token comment" spellcheck="true"># 生成.gitignore文件</span>
+cat .gitignore
+</code></pre>
+</li>
+</ol>
+<h1 id="忽略所有的-a-文件"><a href="#忽略所有的-a-文件" class="headerlink" title="忽略所有的 .a 文件"></a>忽略所有的 .a 文件</h1><p>*.a</p>
+<h1 id="但跟踪所有的-lib-a，即便你在前面忽略了-a-文件"><a href="#但跟踪所有的-lib-a，即便你在前面忽略了-a-文件" class="headerlink" title="但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件"></a>但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件</h1><p>!lib.a</p>
+<h1 id="只忽略当前目录下的-TODO-文件，而不忽略-subdir-TODO"><a href="#只忽略当前目录下的-TODO-文件，而不忽略-subdir-TODO" class="headerlink" title="只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO"></a>只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO</h1><p>/TODO</p>
+<h1 id="忽略任何目录下名为-build-的文件夹"><a href="#忽略任何目录下名为-build-的文件夹" class="headerlink" title="忽略任何目录下名为 build 的文件夹"></a>忽略任何目录下名为 build 的文件夹</h1><p>build/</p>
+<h1 id="忽略-doc-notes-txt，但不忽略-doc-server-arch-txt"><a href="#忽略-doc-notes-txt，但不忽略-doc-server-arch-txt" class="headerlink" title="忽略 doc/notes.txt，但不忽略 doc/server/arch.txt"></a>忽略 doc/notes.txt，但不忽略 doc/server/arch.txt</h1><p>doc/*.txt</p>
+<h1 id="忽略-doc-目录及其所有子目录下的-pdf-文件"><a href="#忽略-doc-目录及其所有子目录下的-pdf-文件" class="headerlink" title="忽略 doc/ 目录及其所有子目录下的 .pdf 文件"></a>忽略 doc/ 目录及其所有子目录下的 .pdf 文件</h1><p>doc/<em>*/</em>.pdf</p>
+<pre><code>### 远程仓库
+#### 分类
+[Gitee](https://gitee.com/)：国内的github
+[github](https://github.com/)：代码托管网站
+
+
+#### 设计SSH秘钥
+```git
+# 在本地运行 ,&quot; &quot;内容可以随便写，回车三次即可生成
+ssh-keygen -t rsa -C &quot;xxxx@email.com&quot;
+
+# 在C:\Users\主机名\.ssh中会生成两个文件，id_rsa.pub是公钥，
+# 打开后复制里面的内容。id_rsa是私钥，不能泄露出去。
+# 登陆gitee,在账户设置中，选择 &quot;SSH Keys&quot; ,
+# 起一个名字，在Key中填写 id_rsa.pub 文件中的</code></pre><h4 id="本地有，运程没有"><a href="#本地有，运程没有" class="headerlink" title="本地有，运程没有"></a>本地有，运程没有</h4><pre class=" language-git"><code class="language-git"><span class="token comment" spellcheck="true"># 先在创建一个空项目，复制项目地址</span>
+<span class="token comment" spellcheck="true"># 本地连接远程</span>
+git remote add origin &lt;url>
+<span class="token comment" spellcheck="true"># 推送文件至远程仓库</span>
+git push origin master
+</code></pre>
+<h3 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h3><pre class=" language-git"><code class="language-git"><span class="token comment" spellcheck="true"># 查看分支</span>
+git branch
+<span class="token comment" spellcheck="true"># 创建分支</span>
+git branch dev
+<span class="token comment" spellcheck="true"># 切换分支</span>
+git checkout dev
+<span class="token comment" spellcheck="true"># 简易日志</span>
+git log --oneline
+git log
+<span class="token comment" spellcheck="true"># 合并分支</span>
+git merge dev
+<span class="token comment" spellcheck="true"># 冲突解决</span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://ziv-bigpen.github.io/2020/05/16/Windows%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/huaji.jpg">
       <meta itemprop="name" content="ziv">
       <meta itemprop="description" content="personal">
     </span>
@@ -246,7 +430,7 @@
     <link itemprop="mainEntityOfPage" href="https://ziv-bigpen.github.io/2020/05/16/%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%A5%E6%9C%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/huaji.jpg">
       <meta itemprop="name" content="ziv">
       <meta itemprop="description" content="personal">
     </span>
@@ -362,7 +546,7 @@ Sysout<span class="token punctuation">.</span>out<span class="token punctuation"
     <link itemprop="mainEntityOfPage" href="https://ziv-bigpen.github.io/2020/05/16/%E9%9B%86%E5%90%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/huaji.jpg">
       <meta itemprop="name" content="ziv">
       <meta itemprop="description" content="personal">
     </span>
@@ -588,7 +772,7 @@ Sysout<span class="token punctuation">.</span>out<span class="token punctuation"
     <link itemprop="mainEntityOfPage" href="https://ziv-bigpen.github.io/2020/03/23/hello-myblog-by-hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/huaji.jpg">
       <meta itemprop="name" content="ziv">
       <meta itemprop="description" content="personal">
     </span>
@@ -698,6 +882,8 @@ Sysout<span class="token punctuation">.</span>out<span class="token punctuation"
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ziv"
+      src="/images/huaji.jpg">
   <p class="site-author-name" itemprop="name">ziv</p>
   <div class="site-description" itemprop="description">personal</div>
 </div>
@@ -706,24 +892,44 @@ Sysout<span class="token punctuation">.</span>out<span class="token punctuation"
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+          
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+          
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ziv-bigpen" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ziv-bigpen" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.yuque.com/ziv-bigpen/blog" title="yuque → https:&#x2F;&#x2F;www.yuque.com&#x2F;ziv-bigpen&#x2F;blog" rel="noopener" target="_blank"><i class="fa-user-circle fa-fw"></i>yuque</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.yuque.com/ziv-bigpen/blog" title="https:&#x2F;&#x2F;www.yuque.com&#x2F;ziv-bigpen&#x2F;blog" rel="noopener" target="_blank">Title</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
